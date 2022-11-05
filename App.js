@@ -8,10 +8,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function HomeScreen({navigation}){
   return (
-      <View style={styles.container}>
+<View style={styles.container}>
 
-      <Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
-      <Text style={styles.middleText}>Please select an Option Below</Text>
+<Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
+<Text style={styles.middleText}>Please select an Option Below</Text>
+
 
       <Button style={styles.buttons}
         title="Arrays"
@@ -23,13 +24,13 @@ function HomeScreen({navigation}){
         color="#3a8727"
         onPress={() => Alert.alert('Simple Button pressed')} />
 
-      <Button style={styles.buttons}
-        title="Trees"
-        color="#3a8727"
-        onPress={() => Alert.alert('Simple Button pressed')} />
+ <Button style={styles.buttons}
+  title="Trees"
+  color="#3a8727"
+  onPress={() => Alert.alert('Simple Button pressed')} />
 
 
-      <StatusBar style="auto" />
+<StatusBar style="auto" />
     </View>
   );
 }
