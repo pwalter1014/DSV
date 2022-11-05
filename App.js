@@ -6,7 +6,7 @@ import { getInspectorDataForInstance } from "react-native/Libraries/Renderer/imp
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function HomeScreen() {
+function HomeScreen({navigation}){
   return (
       <View style={styles.container}>
 
@@ -16,9 +16,9 @@ function HomeScreen() {
       <Button style={styles.buttons}
         title="Arrays"
         color="#3a8727"
-        onPress={() => NavigationContainer.navigate('Array', {name: 'Array'})} />
+        onPress={() => navigation.navigate('Array', {name: 'Array'})} />
 
-      <Button style={styles.buttons}
+      <Button
         title="Linked Lists"
         color="#3a8727"
         onPress={() => Alert.alert('Simple Button pressed')} />
