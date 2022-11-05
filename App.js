@@ -1,66 +1,35 @@
 
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View,  Button, SafeAreaView, Alert } from "react-native";
+import { StyleSheet, Text, View, Button, SafeAreaView, Alert } from "react-native";
 import Search from './Search';
 import { getInspectorDataForInstance } from "react-native/Libraries/Renderer/implementations/ReactNativeRenderer-dev";
 
-class Array {
-  constructor() {
-    this.length = 0;
-    this.data = {};
-  }
-
-  push(element) {
-    this.data[this.length] = element;
-    this.length++;
-    return this.data;
-  }
-
-  pop() {
-    let item = this.data[this.length];
-    delete this.data[this.length - 1];
-    this.length--;
-    return this.data;
-  }
-
-  insertAt(item, index) {
-    for (let i = this.length; i >= index; i--) {
-      this.data[i] = this.data[i - 1];
-    }
-    this.data[index] = item;
-    this.length++;
-    return this.data;
-  }
-
-  deleteAt(index) {
-    for (let i = index; i < this.length - 1; i++) {
-      this.data[i] = this.data[i + 1];
-    }
-    delete this.data[this.length - 1];
-    this.length--;
-    return this.data;
-  }
-
-  getElementAtIndex(index) {
-    return this.data[index];
-  }
-}
 export default function App() {
   return (
     <View style={styles.container}>
-       
+
       <Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
       <Text style={styles.middleText}>Please select an Option Below</Text>
-      
-     
-     
+
+
+
       <Button style={styles.buttons}
-        title="Geeks"
+        title="Arrays"
         color="#3a8727"
-        onPress={() => Alert.alert('Simple Button pressed')}/>
-       
-        
-          <StatusBar style="auto" />
+        onPress={() => Alert.alert('Simple Button pressed')} />
+
+      <Button style={styles.buttons}
+        title="Linked Lists"
+        color="#3a8727"
+        onPress={() => Alert.alert('Simple Button pressed')} />
+
+      <Button style={styles.buttons}
+        title="Trees"
+        color="#3a8727"
+        onPress={() => Alert.alert('Simple Button pressed')} />
+
+
+      <StatusBar style="auto" />
     </View>
   );
 }
