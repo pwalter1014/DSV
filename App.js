@@ -1,5 +1,7 @@
+
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View,  Button, SafeAreaView, Alert } from "react-native";
+import Search from './Search';
 import { getInspectorDataForInstance } from "react-native/Libraries/Renderer/implementations/ReactNativeRenderer-dev";
 
 class Array {
@@ -46,11 +48,19 @@ class Array {
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text> This is an array depending on how much it is called 
-        it will create that many indexes however, 
-        if you call an array with 10 indexes you are calling 10 indexes from 0 to 9. 
-          </Text> 
-      <StatusBar style="auto" />
+       
+      <Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
+      <Text style={styles.middleText}>Please select an Option Below</Text>
+      
+     
+     
+      <Button style={styles.buttons}
+        title="Geeks"
+        color="#3a8727"
+        onPress={() => Alert.alert('Simple Button pressed')}/>
+       
+        
+          <StatusBar style="auto" />
     </View>
   );
 }
@@ -58,11 +68,32 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#37353d',
+    alignItems: 'center',
+    justifyContent: 'center',
+
   },
+
+  header: {
+    color: '#3a8727',
+    width: 400,
+    fontSize: 15,
+    textAlign: 'left',
+    marginTop: 40,
+    marginLeft: 15,
+  },
+
+  middleText: {
+    flex: 6,
+    color: '#3a8727',
+    textAlign: 'center',
+    fontSize: 25,
+    marginTop: 75,
+    width: 400,
+  },
+
+  buttons: {
+    boder: 'none',
+    color: 'pink',
+  }
 });
-
-
-//This is a test to see if my git works properly -Ed
