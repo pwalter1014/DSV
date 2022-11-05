@@ -6,24 +6,25 @@ import { getInspectorDataForInstance } from "react-native/Libraries/Renderer/imp
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function HomeScreen() {
+function HomeScreen({navigation}){
   return (
 <View style={styles.container}>
 
 <Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
 <Text style={styles.middleText}>Please select an Option Below</Text>
 
-<Button style={styles.buttons}
-  title="Arrays"
-  color="#3a8727"
-  onPress={() => NavigationContainer.navigate('Array', {name: 'Array'})} />
 
-<Button style={styles.buttons}
-  title="Linked Lists"
-  color="#3a8727"
-  onPress={() => Alert.alert('Simple Button pressed')} />
+      <Button style={styles.buttons}
+        title="Arrays"
+        color="#3a8727"
+        onPress={() => navigation.navigate('Array', {name: 'Array'})} />
 
-<Button style={styles.buttons}
+      <Button style={styles.buttons}
+        title="Linked Lists"
+        color="#3a8727"
+        onPress={() => Alert.alert('Simple Button pressed')} />
+
+ <Button style={styles.buttons}
   title="Trees"
   color="#3a8727"
   onPress={() => Alert.alert('Simple Button pressed')} />
