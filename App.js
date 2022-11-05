@@ -55,13 +55,11 @@ export default function App() {
      
      
       <Button style={styles.buttons}
-        title="Geeks"
+        title="Tutorial"
         color="#3a8727"
-        onPress={() => Alert.alert('Simple Button pressed')}/>
-       
-        
-          <StatusBar style="auto" />
+        onclick="document.location='Tutorial.js'">Tutorial</Button> 
     </View>
+
   );
 }
 
