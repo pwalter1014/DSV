@@ -19,7 +19,7 @@ function HomeScreen({navigation}){
         color="#3a8727"
         onPress={() => navigation.navigate('Array', {name: 'Array'})} />
 
-      <Button
+      <Button style={styles.buttons}
         title="Linked Lists"
         color="#3a8727"
         onPress={() => Alert.alert('Simple Button pressed')} />
