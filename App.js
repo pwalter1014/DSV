@@ -43,7 +43,10 @@ class Array{
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text> App.js to start working on your app!</Text>
+      <Text> This is an array depending on how much it is called 
+        it will create that many indexes however, 
+        if you call an array with 10 indexes you are calling 10 indexes from 0 to 9. 
+          </Text> 
       <StatusBar style="auto" />
     </View>
   );
