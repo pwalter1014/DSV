@@ -1,22 +1,22 @@
-
+import * as React from 'react';
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button, SafeAreaView, Alert } from "react-native";
 import Search from './Search';
 import { getInspectorDataForInstance } from "react-native/Libraries/Renderer/implementations/ReactNativeRenderer-dev";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function App() {
+function HomeScreen() {
   return (
-    <View style={styles.container}>
+      <View style={styles.container}>
 
       <Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
       <Text style={styles.middleText}>Please select an Option Below</Text>
 
-
-
       <Button style={styles.buttons}
         title="Arrays"
         color="#3a8727"
-        onPress={() => Alert.alert('Simple Button pressed')} />
+        onPress={() => NavigationContainer.navigate('Array', {name: 'Array'})} />
 
       <Button style={styles.buttons}
         title="Linked Lists"
@@ -31,6 +31,40 @@ export default function App() {
 
       <StatusBar style="auto" />
     </View>
+  );
+}
+
+function Array() {
+  return (
+    <View style={styles.container}>
+
+      <Text style={styles.header}>Array, {"\n"}Arrays</Text>
+      <Text style={styles.middleText}>Please select an Option Below</Text>
+      </View>
+  );
+};
+
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{title: 'Welcome' }}
+          />
+
+          <Stack.Screen 
+            name="Array"
+            component={Array}
+          />
+
+        </Stack.Navigator>
+      </NavigationContainer>
+
   );
 }
 
