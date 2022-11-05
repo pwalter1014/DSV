@@ -18,3 +18,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
+//This is a test to see if my git works properly -Ed
