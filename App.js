@@ -24,10 +24,10 @@ function HomeScreen({navigation}){
         color="#3a8727"
         onPress={() => Alert.alert('Simple Button pressed')} />
 
- <Button style={styles.buttons}
-  title="Trees"
-  color="#3a8727"
-  onPress={() => Alert.alert('Simple Button pressed')} />
+      <Button style={styles.buttons}
+        title="Trees"
+        color="#3a8727"
+        onPress={() => Alert.alert('Simple Button pressed')} />
 
 
 <StatusBar style="auto" />
