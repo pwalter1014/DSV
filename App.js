@@ -108,10 +108,9 @@ function SingleLinkedList(){
       />
       <Text style ={styles.header}>Sentinal Node?</Text>
     </View>
-    
-
   );
 }
+
 
 function DoubleLinkedList(){
   return(
