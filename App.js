@@ -9,10 +9,10 @@ import { useState } from "react";
 import { Switch} from "react-native";
 
 
+
 function HomeScreen({navigation}){
   return (
 <View style={styles.container}>
-
   <Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
   <Text style={styles.middleText}>Please select an Option Below</Text>
 
@@ -42,11 +42,21 @@ function HomeScreen({navigation}){
     onPress={() => BackHandler.exitApp()} />
 
   <StatusBar style="auto" />
-</View>
-  );
+    </View>
+    ); 
 }
 
 function Array() {
+  return (
+    <View style={styles.container}>
+
+      <Text style={styles.header}>Array, {"\n"}Arrays</Text>
+      <Text style={styles.middleText}>Please select an Option Below</Text>
+      </View>
+  );
+};
+
+function Bst() {
   return (
     <View style={styles.container}>
 
@@ -72,23 +82,14 @@ function LinkedList({navigation}) {
   );
 };
 
-function Bst() {
-  return (
-    <View style={styles.container}>
-
-      <Text style={styles.header}>Array, {"\n"}Arrays</Text>
-      <Text style={styles.middleText}>Please select an Option Below</Text>
-    </View>
-  );
-};
-
 function Instructions() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Instructions Placeholder</Text>
     </View>
-  )
+  );
 }
+
 
 function SingleLinkedList(){
   const [isEnabled, setIsEnabled] = useState(false);
@@ -107,6 +108,7 @@ function SingleLinkedList(){
       />
       <Text style ={styles.header}>Sentinal Node?</Text>
     </View>
+    
 
   );
 }
@@ -119,6 +121,8 @@ function DoubleLinkedList(){
 
   );
 }
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -151,7 +155,7 @@ export default function App() {
             name = "Double Linked List"
             component={DoubleLinkedList}
           />      
-
+          
           <Stack.Screen 
             name="Binary Search Tree"
             component={Bst}
@@ -169,12 +173,22 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#37353d',
-    alignItems: 'center',
-    justifyContent: 'center',
 
+  layout: {
+    flex: 10,
+    backgroundColor: '#e5e5e5',
+    justifyContent: 'center',
+  },
+  card: {
+    width: 100, 
+    height: 100, 
+    backgroundColor: 'white', 
+    margin: 16, 
+    borderRadius: 2, 
+    shadowColor: 'black', 
+    shadowOpacity: 0.3, 
+    shadowRadius: 1, 
+    shadowOffset: { height: 1, width: 0.3 } 
   },
 
   header: {
@@ -187,17 +201,29 @@ const styles = StyleSheet.create({
   },
 
   middleText: {
-    flex: 6,
     color: '#3a8727',
     textAlign: 'center',
     fontSize: 25,
     marginTop: 75,
     width: 400,
+    height: 200
   },
 
   buttons: {
+    textAlign:"space-around",
     boder: 'none',
-    color: 'pink',
-  }
+    color: 'white'
+  },
+
+  middleText0: {
+    flex: 3,
+    color: '#3a8727',
+    textAlign: 'center',
+    fontSize: 25,
+    marginTop: 20,
+    width: 400,
+    height: 200
+  },
 
 });
+
