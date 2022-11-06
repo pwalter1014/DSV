@@ -13,7 +13,6 @@ import { Switch} from "react-native";
 function HomeScreen({navigation}){
   return (
 <View style={styles.container}>
-  
   <Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
   <Text style={styles.middleText}>Please select an Option Below</Text>
 
@@ -45,8 +44,7 @@ function HomeScreen({navigation}){
   <StatusBar style="auto" />
     </View>
     ); 
-};
-
+}
 
 function Array() {
   return (
@@ -91,6 +89,7 @@ function Instructions() {
     </View>
   );
 }
+
 
 function SingleLinkedList(){
   const [isEnabled, setIsEnabled] = useState(false);
@@ -226,5 +225,4 @@ const styles = StyleSheet.create({
   },
 
 });
-
 
