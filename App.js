@@ -11,12 +11,10 @@ function HomeScreen({navigation}){
   return (
 <View style={styles.container}>
   
-
-<Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
-<Text style={styles.middleText}>Please select an Option Below</Text>
+  <Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
+  <Text style={styles.middleText}>Please select an Option Below</Text>
 
   <Button style={styles.buttons}
-    
     title="Instructions"
     color="#3a8727"
     onPress={() => navigation.navigate('Instructions', {name: 'Instructions'})} />
@@ -41,10 +39,10 @@ function HomeScreen({navigation}){
     color="#3a8727"
     onPress={() => BackHandler.exitApp()} />
 
-<StatusBar style="auto" />
+  <StatusBar style="auto" />
     </View>
-  );
-}
+    ); 
+};
 
 function Array() {
   return (
@@ -124,8 +122,9 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+
   layout: {
-    flex: 1,
+    flex: 10,
     backgroundColor: '#e5e5e5',
     justifyContent: 'center',
   },
@@ -151,7 +150,6 @@ const styles = StyleSheet.create({
   },
 
   middleText: {
-    flex: 6,
     color: '#3a8727',
     textAlign: 'center',
     fontSize: 25,
@@ -160,7 +158,8 @@ const styles = StyleSheet.create({
   },
 
   buttons: {
+    textAlign:"space-around",
     boder: 'none',
-    color: 'pink',
+    color: 'white',
   }
 });
