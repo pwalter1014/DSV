@@ -5,6 +5,8 @@ import Search from './Search';
 import { getInspectorDataForInstance } from "react-native/Libraries/Renderer/implementations/ReactNativeRenderer-dev";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useState } from "react";
+import { Switch} from "react-native";
 
 
 function HomeScreen({navigation}){
@@ -54,13 +56,19 @@ function Array() {
   );
 };
 
-function LinkedList() {
+function LinkedList({navigation}) {
   return (
     <View style={styles.container}>
+      <Button style={styles.buttons}
+        title="Single Linked List"
+        color="#3a8727"
+        onPress={() => navigation.navigate('Single Linked List', {name: 'Single Linked List'})} />
 
-      <Text style={styles.header}>Array, {"\n"}Arrays</Text>
-      <Text style={styles.middleText}>Please select an Option Below</Text>
-      </View>
+      <Button style={styles.buttons}
+        title="Double Linked Lists"
+        color="#3a8727"
+        onPress={() => navigation.navigate('Double Linked List', {name: 'Double Linked List'})} />
+    </View>
   );
 };
 
@@ -70,17 +78,46 @@ function Bst() {
 
       <Text style={styles.header}>Array, {"\n"}Arrays</Text>
       <Text style={styles.middleText}>Please select an Option Below</Text>
-      </View>
+    </View>
   );
 };
 
 function Instructions() {
   return (
     <View style={styles.container}>
-
       <Text style={styles.header}>Instructions Placeholder</Text>
     </View>
   )
+}
+
+function SingleLinkedList(){
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  return(
+    <View style ={styles.container}>
+      <View style={[styles.switchContainer, {flexDirection: "column"}]}>
+        <View style={{ flex: 1, backgroundColor: "red" }} />
+      </View>
+      <Switch
+        trackColor={{ false: "#767577", true: "#81b0ff" }}
+        thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={toggleSwitch}
+        value={isEnabled}
+      />
+      <Text style ={styles.header}>Sentinal Node?</Text>
+    </View>
+
+  );
+}
+
+function DoubleLinkedList(){
+  return(
+    <View style ={styles.container}>
+      <Text style={styles.header}>Instructions Placeholder</Text>
+    </View>
+
+  );
 }
 
 const Stack = createNativeStackNavigator();
@@ -104,6 +141,16 @@ export default function App() {
             name="Linked List"
             component={LinkedList}
           />
+
+          <Stack.Screen
+            name = "Single Linked List"
+            component={SingleLinkedList}
+          />
+
+          <Stack.Screen
+            name = "Double Linked List"
+            component={DoubleLinkedList}
+          />      
 
           <Stack.Screen 
             name="Binary Search Tree"
@@ -151,5 +198,19 @@ const styles = StyleSheet.create({
   buttons: {
     boder: 'none',
     color: 'pink',
+  },
+
+  checkboxContainer: {
+    flexDirection: "row",
+    marginBottom: 20,
+  },
+
+  checkbox: {
+    alignSelf: "center",
+  },
+
+  label: {
+    margin: 8,
   }
+
 });
