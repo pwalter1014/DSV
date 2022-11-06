@@ -36,14 +36,19 @@ function HomeScreen({navigation}){
 }
 
 function Array() {
+
   return (
     <View style={styles.container}>
-
       <Text style={styles.header}>Array, {"\n"}Arrays</Text>
-      <Text style={styles.middleText}>Please select an Option Below</Text>
-      </View>
+      
+      <Text style={styles.middleText0}>Arrays</Text>
+      <Text>This is supposed to be where the array goes</Text>
+    </View>
+
   );
 };
+
+
 
 
 const Stack = createNativeStackNavigator();
@@ -94,10 +99,22 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginTop: 75,
     width: 400,
+    height: 200
   },
 
   buttons: {
     boder: 'none',
     color: 'pink',
-  }
+  },
+
+  middleText0: {
+    flex: 3,
+    color: '#3a8727',
+    textAlign: 'center',
+    fontSize: 25,
+    marginTop: 20,
+    width: 400,
+    height: 200
+  },
+
 });
