@@ -92,7 +92,6 @@ function Instructions() {
   );
 }
 
-<<<<<<< Updated upstream
 function SingleLinkedList(){
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
@@ -109,31 +108,10 @@ function SingleLinkedList(){
         value={isEnabled}
       />
       <Text style ={styles.header}>Sentinal Node?</Text>
-
-=======
-function Array() {
-  arraylength=0;
-  array="O";
-  for(i=0;i<arraylength;i++){
-
-  }
-  return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Array, {"\n"}Arrays</Text>
-      <Text style={styles.middleText}>Arrays</Text>
-      <Text>{{arraylength}} </Text>
-      <Text>This is supposed to be where the array goes</Text>
-      
-      <Button style={styles.buttons}
-        title="Click here to add"
-        color="#ffffff"
-        onPress={() => arraylength++} />
->>>>>>> Stashed changes
     </View>
-    
-
   );
 }
+
 
 function DoubleLinkedList(){
   return(
