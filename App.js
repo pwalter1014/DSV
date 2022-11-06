@@ -108,6 +108,7 @@ function SingleLinkedList(){
         value={isEnabled}
       />
       <Text style ={styles.header}>Sentinal Node?</Text>
+
     </View>
 
   );
@@ -121,6 +122,8 @@ function DoubleLinkedList(){
 
   );
 }
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -204,11 +207,25 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginTop: 75,
     width: 400,
+    height: 200
   },
 
   buttons: {
     textAlign:"space-around",
     boder: 'none',
-    color: 'white',
-  }
+    color: 'white'
+  },
+
+  middleText0: {
+    flex: 3,
+    color: '#3a8727',
+    textAlign: 'center',
+    fontSize: 25,
+    marginTop: 20,
+    width: 400,
+    height: 200
+  },
+
 });
+
+
