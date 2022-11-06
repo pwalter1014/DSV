@@ -13,8 +13,7 @@ import { Switch} from "react-native";
 function HomeScreen({navigation}){
   return (
 <View style={styles.container}>
-  <Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
-  <Text style={styles.middleText}>Please select an Option Below</Text>
+  <Text style={styles.middleText}>Please select a Data Structure Below</Text>
 
   <Button style={styles.buttons}
     title="Instructions"
@@ -48,11 +47,13 @@ function HomeScreen({navigation}){
 
 function Array() {
   return (
-    <View style={styles.container}>
-
-      <Text style={styles.header}>Array, {"\n"}Arrays</Text>
-      <Text style={styles.middleText}>Please select an Option Below</Text>
-      </View>
+    <View style={[styles.container, {flexDirection: "row"}]}>
+      <View style={[styles.fcontainer]} />
+      <View style={[styles.fcontainer]} />
+      <View style={[styles.fcontainer]} />
+      <View style={[styles.fcontainer]} />
+      <View style={[styles.fcontainer]} />
+    </View>
   );
 };
 
@@ -179,6 +180,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#e5e5e5',
     justifyContent: 'center',
   },
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+  fcontainer:{
+    flex: 1,
+    backgroundColor: 'white',
+    height:100,
+    borderWidth: 2,
+    borderColor: 'black'
+  },
+
   card: {
     width: 100, 
     height: 100, 
