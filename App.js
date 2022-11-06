@@ -46,7 +46,7 @@ function HomeScreen({navigation}){
 function Array() {
   return (
     <View style={[styles.container, {flexDirection: "row"}]}>
-      <View style={[styles.fcontainer]} />
+      <View style={[styles.fcontainer]}/>
       <View style={[styles.fcontainer]} />
       <View style={[styles.fcontainer]} />
       <View style={[styles.fcontainer]} />
@@ -92,12 +92,7 @@ function Instructions() {
       <Text style={styles.instructContainer}>3. The basic methods that are in tandem to an array in Java are: Push, Pop, Insert, Delete, and Get{"\n"}{"\n"}</Text>
       <Text style={styles.instructContainer}>4. The average time complexities for array data structures are as follow: {"\n"}{"\n"}Push: O(1){"\n"}Pop: O(1){"\n"}Insert: O(N){"\n"}Delete: O(N){"\n"}Get: O(N)</Text>
       </Text>
-   
     </ScrollView>
-  )
-    <View style={styles.container}>
-      <Text style={styles.header}>Instructions Placeholder</Text>
-    </View>
   );
 }
 
@@ -139,7 +134,7 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{title: 'Welcome, Data Structure Deadheads'}}
+            options={{title: 'Welcome'}}
           />
 
           <Stack.Screen 
@@ -187,15 +182,11 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-
-    backgroundColor: '#37353d',
-   
-  
+    backgroundColor: 'white'
   },
 
   nested: {
     textAlign: 'center',
-    borderColor: 'blue',
     borderWidth: 2,
     padding: 5,
   },
