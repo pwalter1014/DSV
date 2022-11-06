@@ -13,8 +13,8 @@ function HomeScreen({navigation}){
   return (
 <View style={styles.container}>
 
-<Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
-<Text style={styles.middleText}>Please select an Option Below</Text>
+  <Text style={styles.header}>Welcome, {"\n"}Data Structure Deadheads</Text>
+  <Text style={styles.middleText}>Please select an Option Below</Text>
 
   <Button style={styles.buttons}
     title="Instructions"
@@ -41,8 +41,8 @@ function HomeScreen({navigation}){
     color="#3a8727"
     onPress={() => BackHandler.exitApp()} />
 
-<StatusBar style="auto" />
-    </View>
+  <StatusBar style="auto" />
+</View>
   );
 }
 
@@ -198,19 +198,6 @@ const styles = StyleSheet.create({
   buttons: {
     boder: 'none',
     color: 'pink',
-  },
-
-  checkboxContainer: {
-    flexDirection: "row",
-    marginBottom: 20,
-  },
-
-  checkbox: {
-    alignSelf: "center",
-  },
-
-  label: {
-    margin: 8,
   }
 
 });
