@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, BackHandler, Text, View, Button, SafeAreaView, Alert } from "react-native";
+import { StyleSheet, ScrollView, BackHandler, Text, View, Button, SafeAreaView, Alert } from "react-native";
 import Search from './Search';
 import { getInspectorDataForInstance } from "react-native/Libraries/Renderer/implementations/ReactNativeRenderer-dev";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useState } from "react";
 import { Switch} from "react-native";
-
-
 
 function HomeScreen({navigation}){
   return (
@@ -85,12 +83,23 @@ function LinkedList({navigation}) {
 
 function Instructions() {
   return (
+    
+    <ScrollView style={styles.container}>
+      <Text style={styles.nested}>
+      <Text style={styles.subtitle}>Arrays{"\n"}</Text>
+      <Text style={styles.instructContainer}>1. An array is defined as the summation of objects of the same data type stored within adjacent memory locations{"\n"}{"\n"}</Text>
+      <Text style={styles.instructContainer}>2. Starting at n=0, each index of an array indicates a memory locations in which a value, string{"\n"}{"\n"}</Text>
+      <Text style={styles.instructContainer}>3. The basic methods that are in tandem to an array in Java are: Push, Pop, Insert, Delete, and Get{"\n"}{"\n"}</Text>
+      <Text style={styles.instructContainer}>4. The average time complexities for array data structures are as follow: {"\n"}{"\n"}Push: O(1){"\n"}Pop: O(1){"\n"}Insert: O(N){"\n"}Delete: O(N){"\n"}Get: O(N)</Text>
+      </Text>
+   
+    </ScrollView>
+  )
     <View style={styles.container}>
       <Text style={styles.header}>Instructions Placeholder</Text>
     </View>
   );
 }
-
 
 function SingleLinkedList(){
   const [isEnabled, setIsEnabled] = useState(false);
@@ -112,7 +121,6 @@ function SingleLinkedList(){
   );
 }
 
-
 function DoubleLinkedList(){
   return(
     <View style ={styles.container}>
@@ -121,8 +129,6 @@ function DoubleLinkedList(){
 
   );
 }
-
-
 
 const Stack = createNativeStackNavigator();
 
@@ -133,7 +139,7 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{title: 'Welcome'}}
+            options={{title: 'Welcome, Data Structure Deadheads'}}
           />
 
           <Stack.Screen 
@@ -181,6 +187,35 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+
+    backgroundColor: '#37353d',
+   
+  
+  },
+
+  nested: {
+    textAlign: 'center',
+    borderColor: 'blue',
+    borderWidth: 2,
+    padding: 5,
+  },
+
+  instructContainer: {
+    flex: 5,
+    color: '#3a8727',
+    textAlign: 'center',
+    fontSize: 25,
+    marginTop: 25,
+    width: 400,
+    padding:5,
+  },
+
+  subtitle: {
+    textDecorationLine: 'underline',
+    fontSize: 25,
+    color: '#3a8727',
+    
+
     padding: 20,
   },
   fcontainer:{
@@ -201,6 +236,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3, 
     shadowRadius: 1, 
     shadowOffset: { height: 1, width: 0.3 } 
+
   },
 
   header: {
@@ -236,6 +272,5 @@ const styles = StyleSheet.create({
     width: 400,
     height: 200
   },
-
 });
 
